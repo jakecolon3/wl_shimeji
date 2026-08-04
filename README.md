@@ -57,6 +57,36 @@ Below are the community packages for wl_shimeji. They are not maintained by me, 
 
 - Arch Linux (AUR): [wl_shimeji-git](https://aur.archlinux.org/packages/wl_shimeji-git)
 
+- Nix / NixOS:
+
+Add it to your flake inputs like so:
+```nix
+{
+  inputs = {
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+
+    wl_shimeji = {
+      url = "git+https://github.com/CluelessCatBurger/wl_shimeji?submodules=1"; # We have to use git to pull the submodules
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+}
+```
+Then add it to your package list
+```nix
+{
+  # System-wide install
+  environment.systemPackages = with pkgs; [
+    inputs.wl_shimeji.packages.${system}.default
+  ];
+
+  # User side / Home Manager install
+  home.packages = with pkgs; [
+    inputs.wl_shimeji.packages.${system}.default
+  ];
+}
+```
+
 ## Official packages
 
 ### Plugins
