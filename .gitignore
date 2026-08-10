@@ -12,3 +12,4 @@ scripts/*
 !scripts/*.py
 !scripts/PKGBUILD
 *__pycache__*
+result
