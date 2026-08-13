@@ -77,12 +77,12 @@ Then add it to your package list
 {
   # System-wide install
   environment.systemPackages = with pkgs; [
-    inputs.wl_shimeji.packages.${system}.default
+    inputs.wl_shimeji.packages.${stdenv.hostPlatform.system}.default
   ];
 
   # User side / Home Manager install
   home.packages = with pkgs; [
-    inputs.wl_shimeji.packages.${system}.default
+    inputs.wl_shimeji.packages.${stdenv.hostPlatform.system}.default
   ];
 }
 ```
