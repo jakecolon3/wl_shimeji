@@ -295,7 +295,12 @@ struct action_funcs embedded_funcs[mascot_embedded_property_count] = {
      resist_action_clean}, // resist
     {breed_action_init, breed_action_tick, breed_action_next,
      breed_action_clean}, // breed
-    {0},
+    {stay_action_init, stay_action_tick, stay_action_next,
+     simple_action_clean}, // broadcast
+    {stay_action_init, stay_action_tick, stay_action_next,
+     simple_action_clean}, // broadcaststay
+    {move_action_init, move_action_tick, move_action_next,
+     move_action_clean}, // broadcastmove
     {scanmove_action_init, scanmove_action_tick, scanmove_action_next,
      scanmove_action_clean},
     {scanjump_action_init, scanjump_action_tick, scanjump_action_next,

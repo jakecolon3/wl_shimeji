@@ -87,6 +87,8 @@ enum mascot_action_embedded_property {
     mascot_action_embedded_property_drag_resist, // After drag action is finished, mascot is escapes drag
     mascot_action_embedded_property_clone,
     mascot_action_embedded_property_broadcast, // todo
+    mascot_action_embedded_property_broadcaststay,
+    mascot_action_embedded_property_broadcastmove,
     mascot_action_embedded_property_scanmove,
     mascot_action_embedded_property_scanjump,
     mascot_action_embedded_property_interact, // todo

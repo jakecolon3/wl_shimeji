@@ -1474,6 +1474,10 @@ struct config_action_parse_result action_parse(struct mascot_prototype* prototyp
                 embedded_type = mascot_action_embedded_property_clone;
             } else if (!strncasecmp("broadcast", embedded_type_str, embedded_type_str_len)) {
                 embedded_type = mascot_action_embedded_property_broadcast;
+            } else if (!strncasecmp("broadcaststay", embedded_type_str, embedded_type_str_len)) {
+                embedded_type = mascot_action_embedded_property_broadcaststay;
+            } else if (!strncasecmp("broadcastmove", embedded_type_str, embedded_type_str_len)) {
+                embedded_type = mascot_action_embedded_property_broadcastmove;
             } else if (!strncasecmp("scanmove", embedded_type_str, embedded_type_str_len)) {
                 embedded_type = mascot_action_embedded_property_scanmove;
             } else if (!strncasecmp("scanjump", embedded_type_str, embedded_type_str_len)) {
